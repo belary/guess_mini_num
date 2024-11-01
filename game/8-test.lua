@@ -10,13 +10,13 @@ skynet.start(function()
     skynet.error("test unique service")
     skynet.error("param:".. table.concat(param, ", "))
 
-    skynet.error("查询当前节点 唯一句柄")
-    us1 = skynet.queryservice(param[1])
+ --   skynet.error("查询当前节点 唯一句柄")
+ --   us1 = skynet.queryservice(param[1])
     skynet.error("查询全局节点 唯一句柄")
     us2 = skynet.queryservice(true, param[2])
     
 
-    skynet.error("当前节点 唯一句柄:", us1)
+--    skynet.error("当前节点 唯一句柄:", us1)
     skynet.error("全局节点 唯一句柄:", us2)
 
 end)
