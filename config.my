@@ -1,13 +1,3 @@
-thread=2
-logger=nil
-logpath="."
-harbor=1
-address="127.0.0.1:2526"
-master="127.0.0.1:2013"
-start="my_s3"
-bootstrap="snlua bootstrap"
-standalone="0.0.0.0:2013"
-
 root = "./skynet/"
 luaservice = "./game/?.lua;"..root.."service/?.lua;"..root.."test/?.lua;"..root.."examples/?.lua;"..root.."test/?/init.lua"
 lualoader = root .. "lualib/loader.lua"
@@ -15,3 +5,13 @@ lua_path = root.."lualib/?.lua;"..root.."lualib/?/init.lua"
 lua_cpath = root .. "luaclib/?.so"
 cpath = root.."cservice/?.so"
 snax = root.."examples/?.lua;"..root.."test/?.lua"
+thread=2
+logger=nil
+logpath="."
+harbor=1
+address="127.0.0.1:2526"
+master="127.0.0.1:2013"
+start="main"
+bootstrap="snlua bootstrap"
+standalone="0.0.0.0:2013"
+
