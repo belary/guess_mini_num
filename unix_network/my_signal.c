@@ -49,9 +49,11 @@ int main()
             {
                 int sig;
                 read(pipe_fd[0], &sig, sizeof(sig));
+                if (sig == SIGALRM) {
+                    alarm(2);
+                }
                 printf("received signal %d\n", sig);
             }
         }
     }
-    printf("hello world");
 }
