@@ -19,11 +19,11 @@ int main(void)
     - 复制父进程的内存空间（包括代码和数据）
     - 子进程从 fork() 返回处开始执行
 */
-    while (fgets(buf, MAXLINE, stdin) != NULL) {
+    while (fgets(buf, MAXLINE, stdin) != NULL) { // 输入Ctrl+D fgets() 返回NULL
         if (buf[strlen(buf) - 1] == '\n')
             buf[strlen(buf) - 1] = 0;
 
-        if ( (pid = fork()) < 0) {
+        if ( (pid = fork()) < 0) { // 这里fork() 返回时，子进程已经存在
             err_sys("fork error");
         } else if (pid == 0) {
             execlp(buf, buf, (char *)0);
@@ -31,7 +31,7 @@ int main(void)
             exit(127);
         }
 
-        if (waitpid(pid, &status, 0) < 0)
+        if (waitpid(pid, &status, 0) < 0) // 这里waitpid() 返回时，子进程已经结束
             err_sys("waitpid error");
         printf("%% ");
     }
