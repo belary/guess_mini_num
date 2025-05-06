@@ -1,0 +1,4 @@
+sysconf _SC_ARG_MAX
+sysconf _SC_OPEN_MAX
+pathconf _PC_NAME_MAX
+pathconf _PC_PATH_MAX
